@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "sudoku-design"
+    }
+  },
+  "defaultProject": "sudoku-design",
+  "cli": {
+    "analytics": "5c5ae894-429b-4a37-bdb8-49115326e664"
+  }
 }

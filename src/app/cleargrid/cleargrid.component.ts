@@ -1,11 +1,12 @@
 import {
   FormControl,
-  FormGroup,  FormArray,
+  FormGroup,
+  FormArray,
   Validators,
   ValidatorFn,
   ValidationErrors,
   FormBuilder
-} from "@angular/forms";
+} from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -15,35 +16,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CleargridComponent implements OnInit {
   sdkForm = new FormGroup({
-    sudoku : new FormArray([])
+    sudoku: new FormArray([])
   });
-  tmpsdk=this.sdkForm.get('sudoku') as FormArray;
-  
-  orderForm: FormGroup;
-  items: FormArray;
 
+  get demoArray() {
+    return this.sdkForm.get('sudoku') as FormArray;
+  }
 
+  constructor() {}
 
-  constructor(private formBuilder: FormBuilder) { }
-  getSolution(){
-    console.log(this.sdkForm.controls['sudoku'].value);
-    console.log(this.tmpsdk.value)
-    
+  getSolution() {
+    console.log(this.sdkForm.value);
   }
 
   ngOnInit(): void {
-    this.orderForm = this.formBuilder.group({
-      items: this.formBuilder.array([  ])
-    });
-    let arr=this.sdkForm.get('sudoku') as FormArray;
     for (let index = 0; index < 81; index++) {
-      // const element = array[index];
-       arr.push(new FormControl("1"))
-      
+      this.demoArray.push(new FormControl(1));
     }
-
-    console.log(this.tmpsdk.value)
   }
-
 }
-

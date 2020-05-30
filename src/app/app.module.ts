@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -19,7 +20,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReloadsampleComponent,
     SolvegridComponent
   ],
-  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+
+    ReactiveFormsModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

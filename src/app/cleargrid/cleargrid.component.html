@@ -6,6 +6,7 @@
     </tr>
   </table>
 </form>
+<img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading; else noImageFound">
 <a routerLink="/cleargrid" class="btn btn--outline">Clear Grid</a>
 <a (click)="getSolution()" class="btn btn--outline">Solve Grid</a>
 <a routerLink="/reloadsample" class="btn btn--outline">Reload Sample</a>

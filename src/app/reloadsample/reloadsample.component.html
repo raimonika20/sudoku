@@ -1,21 +1,25 @@
 <div class="row">
-<div class="column1">
-<form [formGroup]="sdkForm">
-  <table>
-    <tr formArrayName="sudoku" *ngFor="let row of [0,1,2,3,4,5,6,7,8]">
-      <td *ngFor="let sdk of demoArray.controls | slice:(row*9):(row+1)*9; index as i" class="cell">
-        <input id="{{i+(row*9)}}" [formControlName]="i+(row*9)" type="number" min="1" max="9" /></td>
-    </tr>
-  </table>
-</form>
+  <div class="column1" *ngIf="showForm">
+    <form [formGroup]="sdkForm">
+      <table>
+        <tr  formArrayName="sudoku" *ngFor="let row of [0,1,2,3,4,5,6,7,8]">
+          <td  *ngFor="let sdk of demoArray.controls | slice:(row*9):(row+1)*9; index as i" class="cell">
+            <input [disabled]="isRequestingToSolve" id="{{i+(row*9)}}" [formControlName]="i+(row*9)" type="number" min="1" max="9" /></td>
+        </tr>
+      </table>
+    </form>
+    <div class="image" *ngIf="!showForm">
+      <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
+    </div>
+  </div>
+
+  <div class="column2" *ngIf="!isRequestingToSolve">
+    <a (click)="clearGrid()" class="btn btn--outline" style="width: 100%;">Clear Grid</a>
+    <a (click)="getSolution()" class="btn btn--outline" style="width: 100%;">Solve Grid</a>
+    <a (click)="loadRandomPuzzle()" class="btn btn--outline" style="width: 100%;">Reload Sample</a>
+  </div>
+  <div class="column2" *ngIf="isRequestingToSolve">
+    <a class="btn btn--outline" style="width: 100%;">Please Wait!!!!</a>
+  </div>
 </div>
 
-<div class="column2">
-  <a routerLink="/cleargrid" class="btn btn--outline" style="width: 100%;">Clear Grid</a>
-<a (click)="getSolution()" class="btn btn--outline" style="width: 100%;">Solve Grid</a>
-<a (click)="loadRandomPuzzle()" class="btn btn--outline" style="width: 100%;">Reload Sample</a>
-</div>
-</div>
-<div class="image">
-  <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
-</div>

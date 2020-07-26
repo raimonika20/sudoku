@@ -4,13 +4,8 @@
 
 export const environment = {
   production: false,
-<<<<<<< HEAD
-  // apiUrl: 'http://nekvinder.pythonanywhere.com/giveSolution/',
-  apiUrl: 'http://127.0.0.1:5000/giveSolution/',
-=======
-  apiUrl: 'http://nekvinder.pythonanywhere.com/giveSolution/',w
+  apiUrl: 'http://nekvinder.pythonanywhere.com/giveSolution/',
   // apiUrl: 'http://127.0.0.1:5000/giveSolution/',
->>>>>>> 67413caa20b237cf7b6a229d1f9645a989524c9e
   sampleSudoku:
     '050010040107000602000905000208030501040070020901080406000401000304000709020060010'
 };

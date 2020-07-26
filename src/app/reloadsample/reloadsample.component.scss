@@ -1,34 +1,94 @@
 table {
-    margin:1em auto;
-    margin-top: 2em;
-  }
-  td {
-    height:30px;
-    width:30px;
-    border:1px solid;
-    text-align:center;
-  }
-  td:first-child {
-    border-left:solid;
-  }
-  td:nth-child(3n) {
-    border-right:solid ;
-  }
-  tr:first-child {
-    border-top:solid;
-  }
-  tr:nth-child(3n) td {
-    border-bottom:solid ;
-  }
+  margin:1em auto;
+  margin-top: 2em;
+}
+td {
+  height:30px;
+  width:30px;
+  border:1px solid;
+  text-align:center;
+}
+td:first-child {
+  border-left:solid;
+}
+td:nth-child(3n) {
+  border-right:solid ;
+}
+tr:first-child {
+  border-top:solid;
+}
+tr:nth-child(3n) td {
+  border-bottom:solid ;
+}
+
+.cell input {
+  display: inline-block;
+  float: left;
+
+  border: 1px solid black;
+  width: 30px;
+  height: 30px;
+
+  text-align: center;
+  font-size: 20px;
+}
+
+.column1 {
+  float: left;
+  width: 37%;
+  padding: 5px;
+  margin-left: 150px;
+
+}
+.column2 {
+    float: left;
+    text-align: center;
+    width: 15%;
+    padding: 5px;
+    margin-top: 10em;
+    margin-left: -300px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: " ";
+  clear: both;
+  display: table;
+}
 
 
-  
+.image{
+
+  width: 500px;
+    height: 500px;
+    animation: normal;
+    margin-left: 10em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+.btn {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  padding: .5em 1.25em;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: .75em;
+  margin-left: 30em;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
+  border-radius: 8px;
+}
+
 .btn--outline{
-  border: 3px solid rgb(7, 102, 245);
-  color: rgb(7, 102, 245);
+border: 3px solid rgb(7, 102, 245);
+color: rgb(7, 102, 245);
 }
 
 .btn--outline:hover{
-  background: rgb(7, 102, 245);
-  color: white;
+background: rgb(7, 102, 245);
+color: white;
 }

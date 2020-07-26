@@ -1,12 +1,21 @@
+<div class="row">
+
+<div class="column1">
 <form [formGroup]="sdkForm">
   <table>
     <tr formArrayName="sudoku" *ngFor="let row of [0,1,2,3,4,5,6,7,8]">
       <td *ngFor="let sdk of demoArray.controls | slice:(row*9):(row+1)*9; index as i" class="cell">
-        <input id="{{i+(row*9)}}" [formControlName]="i+(row*9)" type="number" min="1" max="9" /></td>
+        <input id="{{i+(row*9)}}" [formControlName]="i+(row*9)" type="number" min="0" max="9" /></td>
     </tr>
   </table>
 </form>
-<img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading; else noImageFound">
-<a routerLink="/cleargrid" class="btn btn--outline">Clear Grid</a>
-<a (click)="getSolution()" class="btn btn--outline">Solve Grid</a>
-<a routerLink="/reloadsample" class="btn btn--outline">Reload Sample</a>
+</div>
+<div class="column2">
+<a routerLink="/cleargrid" class="btn btn--outline" style="width: 100%;">Clear Grid</a>
+<a (click)="getSolution()" class="btn btn--outline" style="width: 100%;">Solve Grid</a>
+<a routerLink="/reloadsample" class="btn btn--outline" style="width: 100%;">Reload Sample</a>
+</div>
+</div>
+<div class="image">
+  <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
+</div>

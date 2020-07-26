@@ -14,6 +14,7 @@ export class SudokuService {
   }
 
   getSudokuSolution(sudokuStr: string): Observable<Blob> {
+    console.log("solution requeted at url",environment.apiUrl + sudokuStr)
     return this.getImage(environment.apiUrl + sudokuStr);
   }
 }

@@ -24,6 +24,31 @@ table {
     border-bottom:solid ;
   }
 
+  
+.column1 {
+  float: left;
+  width: 37%;
+  padding: 5px;
+  margin-left: 150px;
+
+}
+.column2 {
+    float: left;
+    text-align: center;
+    width: 15%;
+    padding: 5px;
+    margin-top: 10em;
+    margin-left: -300px;
+}
+
+/* Clear floats after image containers */
+.row::after {
+  content: " ";
+  clear: both;
+  display: table;
+}
+
+
 
   
 .btn--outline{

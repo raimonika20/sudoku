@@ -45,6 +45,29 @@ h1{
     margin-top:2em;
 }
 
+.column1 {
+    float: left;
+    width: 37%;
+    padding: 5px;
+    margin-left: -60px;
+  }
+  .column2 {
+      float: left;
+      text-align: center;
+      width: 10%;
+      padding: 5px;
+      margin-top: 12em;
+      margin-left: -20px;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: " ";
+    clear: both;
+    display: table;
+  }
+
+
 .btn {
     cursor: pointer;
     display: inline-block;
@@ -55,7 +78,7 @@ h1{
     text-decoration: none;
     font-weight: bold;
     margin-bottom: .75em;
-    margin-left: 41.5em;
+    margin-left: 34.2em;
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.29);
     border-radius: 8px;
 }
@@ -75,7 +98,7 @@ h1{
     width: 500px;
     height: 500px;
     animation: normal;
-    margin-left: 27em;
+    margin-left: 21em;
     margin-top: 1em;
   }
 

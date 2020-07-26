@@ -47,11 +47,22 @@ export class CleargridComponent implements OnInit {
 
   getSolution() {
     let str = '';
+    var samplemd:any[9][9];
     // console.log(this.sdkForm.value);
     this.demoArray.controls.forEach(element => {
-      str += element.value;
+      for(let i=0;i<9;i++){
+        for(let j=0;j<9;j++){
+            samplemd[i][j]= element.value||0;
+        }
+      }
+    
     });
-    alert(str);
+    alert(samplemd);
+    this.demoArray.controls.forEach(element => {
+
+      str += element.value||0;
+    });
+    // alert(str);
     this.sudokuService.getSudokuSolution(str).subscribe(
       data => {
         this.createImageFromBlob(data);
@@ -66,7 +77,7 @@ export class CleargridComponent implements OnInit {
 
   ngOnInit(): void {
     for (let index = 0; index < 81; index++) {
-      this.demoArray.push(new FormControl(environment.sampleSudoku[index]));
+      this.demoArray.push(new FormControl(""));
     }
   }
 }

@@ -1,110 +1,21 @@
-<body>
-    
-    <table>
-        <tr>
-          <td >  </td>
-          <td >  </td>
-          <td >  </td>
-          <td >8 </td>
-          <td >1 </td>
-          <td >  </td>
-          <td >6 </td>
-          <td >7 </td>
-          <td >  </td>
-        </tr>
-        <tr>
-          <td>  </td>
-          <td>  </td>
-          <td>7  </td>
-          <td>4  </td>
-          <td>9  </td>
-          <td>  </td>
-          <td>2  </td>
-          <td>  </td>
-          <td>8  </td>
-        </tr>  
-        <tr>
-          <td>  </td>
-          <td>6  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>5  </td>
-          <td>  </td>
-          <td>1  </td>
-          <td>  </td>
-          <td>4  </td>
-        </tr>
-        <tr>
-          <td>1  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>3  </td>
-          <td>9  </td>
-          <td>  </td>
-          <td>  </td>
-        </tr>
-        <tr>
-          <td>4  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>8  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>7  </td>
-        </tr>
-        <tr>
-          <td>  </td>
-          <td>  </td>
-          <td>6  </td>
-          <td>9  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>3  </td>
-        </tr>
-        <tr>
-          <td>9  </td>
-          <td>  </td>
-          <td>2  </td>
-          <td>  </td>
-          <td>3  </td>
-          <td>  </td>
-          <td>  </td>
-          <td>6  </td>
-          <td>  </td>
-        </tr>
-        <tr>
-          <td>6  </td>
-          <td>  </td>
-          <td>1  </td>
-          <td>  </td>
-          <td>7  </td>
-          <td>4  </td>
-          <td>3  </td>
-          <td>  </td>
-          <td>  </td>
-        </tr>
-        <tr>
-          <td>  </td>
-          <td>3  </td>
-          <td>4  </td>
-          <td>  </td>
-          <td>6  </td>
-          <td>9 </td>
-          <td>  </td>
-          <td>  </td>
-          <td>  </td>
-        </tr>
-    </table>
-  
-    </body>
+<div class="row">
+<div class="column1">
+<form [formGroup]="sdkForm">
+  <table>
+    <tr formArrayName="sudoku" *ngFor="let row of [0,1,2,3,4,5,6,7,8]">
+      <td *ngFor="let sdk of demoArray.controls | slice:(row*9):(row+1)*9; index as i" class="cell">
+        <input id="{{i+(row*9)}}" [formControlName]="i+(row*9)" type="number" min="1" max="9" /></td>
+    </tr>
+  </table>
+</form>
+</div>
 
-  <a href="#" routerLink = "/cleargrid" class="btn btn--outline">Clear Grid</a>
-  <a href="#" routerLink = "/solvegrid" class="btn btn--outline">Solve Grid</a>
-  <a href="#" routerLink = "/reloadsample" class="btn btn--outline">Reload Sample</a>
-  
+<div class="column2">
+  <a routerLink="/cleargrid" class="btn btn--outline" style="width: 100%;">Clear Grid</a>
+<a (click)="getSolution()" class="btn btn--outline" style="width: 100%;">Solve Grid</a>
+<a (click)="loadRandomPuzzle()" class="btn btn--outline" style="width: 100%;">Reload Sample</a>
+</div>
+</div>
+<div class="image">
+  <img [src]="imageToShow" alt="Place image title" *ngIf="!isImageLoading">
+</div>
